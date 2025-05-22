@@ -5,13 +5,13 @@ module "resource_group" {
 }
 
 module "networking" {
-  source               = "./modules/networking"
-  vnet_name            = var.vnet_name
-  vnet_address_space   = ["10.0.0.0/16"]
-  subnet_name          = var.subnet_name
+  source                = "./modules/networking"
+  vnet_name             = var.vnet_name
+  vnet_address_space    = ["10.0.0.0/16"]
+  subnet_name           = var.subnet_name
   subnet_address_prefix = ["10.0.1.0/24"]
-  location             = module.resource_group.resource_group_location
-  resource_group_name  = module.resource_group.resource_group_name
+  location              = module.resource_group.resource_group_location
+  resource_group_name   = module.resource_group.resource_group_name
 }
 
 module "acr" {
