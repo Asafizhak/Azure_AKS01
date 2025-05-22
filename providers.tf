@@ -1,5 +1,9 @@
 terraform {
   required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.0"
+    }
     local = {
       source  = "hashicorp/local"
       version = "~> 2.1"
@@ -10,6 +14,10 @@ terraform {
   backend "local" {
     path = "terraform.tfstate"
   }
+}
+
+provider "azurerm" {
+  features {}
 }
 
 provider "local" {}
