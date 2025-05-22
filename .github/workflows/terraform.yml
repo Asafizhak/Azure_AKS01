@@ -51,4 +51,4 @@ jobs:
         terraform apply \
           -var "encryption_key=${{ env.ENCRYPTION_KEY }}" \
           -auto-approve tfplan
-# Asaf
+# Asaf.
