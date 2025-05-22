@@ -1,19 +1,17 @@
 terraform {
   required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 3.58"
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.1"
     }
   }
 
-  backend "azurerm" {}
+  # Using local backend instead of Azure
+  backend "local" {
+    path = "terraform.tfstate"
+  }
 }
 
-provider "azurerm" {
-  features {}
-}
+provider "local" {}
 
-variable "encryption_key" {
-  type        = string
-  description = "Encryption key for sensitive data"
-}
+# The encryption_key variable has been moved to variables.tf
