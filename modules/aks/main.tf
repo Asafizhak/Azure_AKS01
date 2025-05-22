@@ -16,8 +16,8 @@ resource "azurerm_kubernetes_cluster" "aks" {
   }
 
   network_profile {
-    network_plugin = "kubenet"  # Use kubenet for simplicity and cost-effectiveness
-    load_balancer_sku = "basic"  # Use basic load balancer for cost savings
+    network_plugin    = "kubenet"
+    load_balancer_sku = "standard"  # Changed from "basic" to "standard"
   }
 
   private_cluster_enabled = true

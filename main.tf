@@ -19,7 +19,7 @@ module "acr" {
   acr_name            = var.acr_name
   resource_group_name = module.resource_group.resource_group_name
   location            = module.resource_group.resource_group_location
-  sku                 = "Basic"  # Use Basic SKU for cost-effectiveness
+  sku                 = "Basic"
 }
 
 module "aks" {
@@ -28,8 +28,8 @@ module "aks" {
   location             = module.resource_group.resource_group_location
   resource_group_name  = module.resource_group.resource_group_name
   dns_prefix           = var.aks_dns_prefix
-  node_count           = 1  # Minimum node count
-  vm_size              = "Standard_B2s"  # Cheapest burstable VM size
+  node_count           = 1
+  vm_size              = "Standard_DS2_v2"  # Changed from "Standard_B2s" to "Standard_DS2_v2"
   subnet_id            = module.networking.subnet_id
   acr_id               = module.acr.acr_id
   tags                 = var.tags
