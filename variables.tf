@@ -69,3 +69,29 @@ variable "node_vm_size" {
   type        = string
   default     = "Standard_B2s"
 }
+
+# New variables for AKS module
+
+variable "aks_dns_prefix" {
+  description = "DNS prefix for the AKS cluster"
+  type        = string
+  default     = "myakscluster"
+}
+
+variable "aks_node_count" {
+  description = "Number of nodes in the AKS cluster"
+  type        = number
+  default     = 1
+}
+
+variable "aks_vm_size" {
+  description = "Size of the VMs to use for the AKS nodes"
+  type        = string
+  default     = "Standard_DS2_v2"
+}
+
+variable "tags" {
+  description = "A mapping of tags to assign to the resources"
+  type        = map(string)
+  default     = {}
+}
