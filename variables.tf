@@ -32,3 +32,23 @@ variable "acr_name" {
   description = "Name of the Azure Container Registry"
   default     = "myacrregistry"
 }
+
+variable "arm_subscription_id" {
+  type        = string
+  description = "The Azure subscription ID"
+}
+
+variable "arm_client_id" {
+  type        = string
+  description = "The Azure service principal client ID"
+}
+
+variable "arm_client_secret" {
+  type        = string
+  description = "The Azure service principal client secret"
+}
+
+variable "arm_tenant_id" {
+  type        = string
+  description = "The Azure tenant ID"
+}
