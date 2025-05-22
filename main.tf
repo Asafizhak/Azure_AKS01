@@ -1,7 +1,6 @@
 module "resource_group" {
-  source              = "./modules/resource_group"
-  resource_group_name = var.resource_group_name
-  location            = var.location
+  source   = "./modules/resource_group"
+  location = var.location
 }
 
 module "networking" {
@@ -29,7 +28,7 @@ module "aks" {
   resource_group_name  = module.resource_group.resource_group_name
   dns_prefix           = var.aks_dns_prefix
   node_count           = 1
-  vm_size              = "Standard_DS2_v2"  # Changed from "Standard_B2s" to "Standard_DS2_v2"
+  vm_size              = "Standard_DS2_v2"
   subnet_id            = module.networking.subnet_id
   acr_id               = module.acr.acr_id
   tags                 = var.tags

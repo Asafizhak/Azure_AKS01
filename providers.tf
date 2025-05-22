@@ -5,10 +5,15 @@ terraform {
       version = "~> 3.58"
     }
   }
+
+  backend "azurerm" {}
 }
 
 provider "azurerm" {
   features {}
-  subscription_id = var.subscription_id
-  use_cli = true
+}
+
+variable "encryption_key" {
+  type        = string
+  description = "Encryption key for sensitive data"
 }
